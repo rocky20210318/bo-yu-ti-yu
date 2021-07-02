@@ -1,6 +1,6 @@
 <template>
-    <router-link :to="`/goods-details/${details.id}`" class="product-list-item-1">
-        <div class=""><van-image width="100%" fit="cover" lazy-load :src="details.thumbnail" class="img" /></div>
+    <router-link v-show="isShow" :to="`/goods-details/${details.id}`" class="product-list-item-1">
+        <div class=""><van-image width="100%" fit="cover" lazy-load :src="details.thumbnail" class="img" @error="isShow = false" /></div>
         <p class="van-ellipsis title">{{ details.title }}</p>
         <van-row type="flex" align="center" justify="space-between" class="data">
             <p class="Price"><span>￥</span>{{ Math.floor(details.price ) }}</p>
@@ -33,6 +33,7 @@ export default {
     },
     data () {
         return {
+            isShow: true
         }
     },
     computed: {

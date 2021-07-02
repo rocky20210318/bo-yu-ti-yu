@@ -20,7 +20,7 @@
                 </router-link>
             </div> -->
             <div class="type-list" >
-                <p v-for="item in typeList" :key="item.keys" :class="['item', { 'active': paramsKeys === item.title }]">{{ item.title }}</p>
+                <p v-for="item in typeList" :key="item.keys" :class="['item', { 'active': paramsKeys === item.title }]" @click="switchKeys(item.title)">{{ item.title }}</p>
             </div>
             <GoodsList ref="goodsList" :keys="paramsKeys" class="goods-list"/>
         </div>
@@ -84,6 +84,12 @@ export default {
                 this.$refs.goodsList.onRefresh()
             }, 100)
             // Location.
+        },
+        switchKeys (keys) {
+            this.paramsKeys = keys
+            setTimeout(() => {
+                this.$refs.goodsList.onRefresh()
+            }, 100)
         }
     }
 }

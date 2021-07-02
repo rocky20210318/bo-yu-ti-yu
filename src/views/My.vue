@@ -33,7 +33,7 @@
                 <router-link to="/my-receive" class="button">查看</router-link>
             </van-row> -->
             <NoticeBar left-icon="volume-o" color="#4E3926" background="rgba(250, 250, 250, 0)" text="即刻开通超级会员，每日享受折上折，更有特权礼品免费拿   "></NoticeBar>
-            <router-link to="/" class="member-link"><img src="../assets/member-link.png" alt=""></router-link>
+            <router-link to="/member" class="member-link"><img src="../assets/member-link.png" alt=""></router-link>
         </div>
         <van-row type="flex" justify="center" align="center" class="coupon-integral">
             <router-link to="" class="item">
